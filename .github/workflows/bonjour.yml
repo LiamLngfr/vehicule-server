@@ -9,4 +9,4 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install -y cowsay
       - run: ls -l
-      - run: cat README.md | cowsay -a
+      - run: cat README.md | cowsay -eT -bdgpstwy
