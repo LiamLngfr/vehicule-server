@@ -10,5 +10,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
+      - run: node -v
       - run: npm ci
       - run: npm run build
