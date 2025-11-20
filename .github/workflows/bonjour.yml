@@ -10,3 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5   
       - run: cat README.md | cowsay -eT -bdgpstwy
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Read package.json
+        id: read
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./README.md
+
+
+      - name: neo-cowsay
+        uses: Code-Hex/neo-cowsay-action@v1.0.3
+        with: 
+          message: ${{ read.outputs.content }}
