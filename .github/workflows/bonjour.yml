@@ -4,9 +4,11 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-24.04
+    container-test-job:
+    runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/cicd-lectures/gitpod:latest
+      options: --user=root
     steps:
-      - uses: actions/checkout@v5
-      - run: sudo apt-get update
-      - run: sudo apt-get install -y cowsay
-      - run: ls -l
+      - uses: actions/checkout@v5   
       - run: cat README.md | cowsay -eT -bdgpstwy
