@@ -9,7 +9,6 @@ jobs:
       options: --user=root
     steps:
       - uses: actions/checkout@v5   
-      - run: cat README.md | cowsay -eT -bdgpstwy
 
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,4 +23,4 @@ jobs:
       - name: neo-cowsay
         uses: Code-Hex/neo-cowsay-action@v1.0.3
         with: 
-          message: ${{ read.outputs.content }}
+          message: ${{ steps.read.outputs.content }}
