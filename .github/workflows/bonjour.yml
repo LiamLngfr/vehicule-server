@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update
-      - run: sudo apt-get install cowsay
+      - run: sudo apt-get install -y cowsay
       - run: ls -l
       - run: cat README.md | cowsay -a
